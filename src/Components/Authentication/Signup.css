@@ -1,0 +1,141 @@
+/* Import shared authentication styles */
+@import './Login.css';
+
+/* ===== SIGNUP SPECIFIC OVERRIDES ===== */
+.auth-form-container {
+  max-width: 600px; /* Wider for signup form */
+}
+
+/* ===== SUCCESS CONTAINER ===== */
+.success-container {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.success-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: successBounce 0.6s ease-out;
+}
+
+@keyframes successBounce {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.success-container h2 {
+  color: var(--auth-accent);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.success-container p {
+  color: var(--auth-text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.login-redirect-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--auth-accent), rgba(76, 206, 172, 0.8));
+  border: 1px solid var(--auth-accent);
+  border-radius: 8px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.login-redirect-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(76, 206, 172, 0.3);
+}
+
+/* ===== FORM TERMS ===== */
+.form-terms {
+  margin: 1.5rem 0;
+}
+
+.form-terms .checkbox-label {
+  align-items: flex-start;
+  line-height: 1.4;
+}
+
+.terms-link {
+  color: var(--auth-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== PASSWORD STRENGTH INDICATOR ===== */
+.password-strength {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.strength-bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(76, 206, 172, 0.2);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.strength-bar.active {
+  background: var(--auth-accent);
+  box-shadow: 0 0 8px rgba(76, 206, 172, 0.4);
+}
+
+.strength-text {
+  font-size: 0.8rem;
+  color: var(--auth-text-secondary);
+}
+
+/* ===== FOOTER LINKS ===== */
+.login-link {
+  color: var(--auth-accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.login-link:hover {
+  color: var(--auth-accent-hover);
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS FOR SIGNUP ===== */
+@media (max-width: 768px) {
+  .auth-form-container {
+    max-width: 100%;
+  }
+  
+  .form-row-double {
+    flex-direction: column;
+  }
+  
+  .success-container {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .success-icon {
+    font-size: 3rem;
+  }
+  
+  .success-container h2 {
+    font-size: 1.5rem;
+  }
+}
